@@ -1,0 +1,204 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+   background-color: black;
+
+   
+    font-family: Arial, sans-serif;
+}
+
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+
+/**/
+
+
+.menu-lateral {
+    float: left; /* Coloca o menu à esquerda */
+    width: 180px; /* Largura do menu lateral */
+    background-color: black;
+    padding: 10px; /* Espaçamento interno do menu */
+    height: 100%; /* Altura 100% da tela */
+
+    margin-left: -2%;
+}
+    .menu-lateral a {
+        padding: 15px 25px;
+        text-decoration: none;
+        font-size: 20px;
+        color: #fff;
+        display: block;
+        transition: 0.3s;
+        
+    }
+    .menu-lateral ul {
+        list-style: none;
+        padding: 0;
+    }
+.table {
+    width: 90%;
+    background-color: #343a4040;
+}
+.table-dark td {
+    background-color: #000;
+}
+
+table.table tbody tr {
+    transition: background-color 0.2s;
+}
+
+    table.table tbody tr:hover {
+       background-color: #555;
+        cursor: pointer;
+    }
+
+
+
+
+        .menu-lateral a:hover {
+            background-color: #555;
+        }
+
+/* Estilos para o conteúdo principal */
+.conteudo {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: 15%;
+    align-items: center;
+}
+
+.detalhes {
+    display: none;
+    width: 20%;
+    /* Defina o valor máximo que deseja para a largura da div pai */
+    margin: 0 auto; /* Centralize a div pai horizontalmente */
+    background-color: #343A40;
+    z-index: 9999; /* Valor alto de z-index para sobrepor outros elementos */
+    position: absolute;
+    top: 50%; /* Posicione a div pai no centro verticalmente */
+    left: 50%; /* Posicione a div pai no centro horizontalmente */
+    transform: translate(-50%, -50%); /* Centralize verticalmente e horizontalmente */
+    color:white;
+    border-radius:2%;
+}
+
+    /* Estilo para a imagem dentro da div pai */
+.imgFilme {
+    width: 80%; /* Largura fixa para todas as imagens */
+    height: 100%; /* Altura fixa para todas as imagens */
+    float: left;
+    margin-right: 10px;
+}
+
+.imgPlanet {
+    width: 300px; /* Largura fixa para todas as imagens */
+    height: 500px; /* Altura fixa para todas as imagens */
+    float: left;
+    margin-right: 10px;
+}
+
+
+
+/* Estilo para o conteúdo dentro da div pai */
+.detalhes .container {
+    display: flex; /* Use flexbox para alinhar a imagem e o texto lado a lado */
+    align-items: center; /* Centralize verticalmente */
+}
+
+    /* Estilo para a descrição (texto) ao lado da imagem */
+    .detalhes p {
+        font-size: 15px;
+        margin-top: 5%;
+        
+    }
+.modal-title{
+    font-size:30px;
+    margin-top:10%;
+    margin-left:10%;
+}
+.close span {
+    font-size: 40px;
+}
+/* Estilos para o botão "Fechar" */
+.btn-close {
+    float: left; 
+    margin-left: 70%;
+}
+
+/* Estilos para a div pai */
+.modal-footer {
+    text-align: right; 
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+

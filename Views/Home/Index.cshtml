@@ -1,0 +1,337 @@
+﻿@model API.Models.CombinedDataViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<div class="nav menu-lateral">
+
+
+    <ul class="nav nav-tabs " id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="nav-films-tab" data-toggle="tab" href="#films" role="tab" aria-controls="Filmes" aria-selected="true">Filmes</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="nav-people-tab" data-toggle="tab" href="#people" role="tab" aria-controls="Personagens" aria-selected="false">Personagens</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="nav-planets-tab" data-toggle="tab" href="#planets" role="tab" aria-controls="Planetas" aria-selected="false">Planetas</a>
+        </li>
+
+    </ul>
+
+
+
+</div>
+
+
+    <div class="conteudo">
+        <div class="tab-content" id="nav-tabContent">
+            <!-- filmes -->
+            <div class="tab-pane fade show active" id="films" role="tabpanel" aria-labelledby="nav-films-tab">
+                <table class="table table-dark" id="films-table">
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Diretor</th>
+                            <th>Produtor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var film in Model.Films)
+                        {
+                            <tr class="film-row" data-film-id="@film.EpisodeId">
+                                <td>@film.Title</td>
+                                <td>@film.Director</td>
+                                <td>@film.Producer</td>
+                            </tr>
+                            <!-- Detalhes do filme -->
+                            <div class="detalhes film-details" style="display: none; width: 60%;" id="details_@film.EpisodeId">
+
+
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-6 img ">
+
+                                            <img src="" class="imgFilme " />
+
+
+                                        </div>
+
+                                        <div class="col-6">
+                                            <div class="descricaoFilme">
+                                                <button type="button" class="close btn" data-dismiss="modal" aria-label="Fechar">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                <h5 class="modal-title">@film.Title</h5>
+                                                <ul>
+
+                                                    <li>
+                                                        <p>Diretor:@film.Director</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>Data de lançamento:@film.ReleaseDate </p>
+                                                    </li>
+                                                    <li>
+                                                        <p>Descrição:@film.OpeningCrawl </p>
+                                                    </li>
+
+                                                </ul>
+
+
+                                                <button type="button" class="btn btn-secondary btn-close"
+                                                        data-dismiss="modal">
+                                                    Fechar
+                                                </button>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <!-- filmes fim -->
+            <!-- pessoas -->
+            <div class="tab-pane fade" id="people" role="tabpanel" aria-labelledby="nav-people-tab">
+                <table class="table table-dark" id="people-table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Altura</th>
+                            <th>Peso</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var people in Model.Peoples)
+                        {
+                            <tr class="people-row" data-people-id="@people.Id">
+                                <td>@people.Name</td>
+                                <td>@people.Height</td>
+                                <td>@people.Mass</td>
+
+                            </tr>
+                            <div class="detalhes people-details" style="display: none; width: 60%;" id="details_people_@people.Id">
+
+
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-6 img imagens">
+
+                                            <img src="" class="imgPeople" />
+
+
+                                        </div>
+
+                                        <div class="col-6">
+                                            <div class="descricao" style="width:300px; margin-left:30px; font-size:80px" ">
+                                                <button type="button" class="close btn" data-dismiss="modal" aria-label="Fechar">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                <h5 class="modal-title">@people.Name</h5>
+                                                <ul style="margin-top:20%;">
+
+                                                    <li>
+                                                        <p>Nome:@people.Name</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>Data de Nascimento:@people.BirthYear </p>
+                                                    </li>
+                                                    <li>
+                                                        <p>Altura:@people.Height </p>
+                                                    </li>
+
+                                                </ul>
+
+
+                                                <button type="button" class="btn btn-secondary btn-close" style="margin-left:320px; margin-top:100px"
+                                                        data-dismiss="modal">
+                                                    Fechar
+                                                </button>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <!-- pessoas fim -->
+                <!-- planetas -->
+                <div class="tab-pane fade" id="planets" role="tabpanel" aria-labelledby="nav-planets-tab">
+                    <table class="table table-dark" id="planets-table">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Período Rotação</th>
+                                <th>Período Orbital</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var planet in Model.Planets)
+                            {
+                                <tr class="planet-row" data-planet-id="@planet.Id">
+                                    <td>@planet.Name</td>
+                                    <td>@planet.RotationPeriod</td>
+                                    <td>@planet.OrbitalPeriod</td>
+
+                                </tr>
+
+                                <div class="detalhes planet-details">
+
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-6 img ">
+
+                                                <img src="" class="imgPlanet" />
+
+
+                                            </div>
+
+                                            <div class="col-6 descricaoPlanet">
+                                                <div class="descricao">
+                                                    <button type="button" class="close btn" data-dismiss="modal" aria-label="Fechar">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                    <h5 class="modal-title">@planet.Name</h5>
+                                                    <ul style="margin-top:20%;">
+
+                                                        <li>
+                                                            <p>Nome: @planet.Name</p>
+                                                        </li>
+                                                        <li>
+                                                            <p>Rotação :@planet.RotationPeriod</p>
+                                                        </li>
+
+                                                        <li>
+                                                            <p>Diametro:  @planet.Diameter</p>
+                                                        </li>
+
+
+                                                    </ul>
+
+
+                                                    <button type="button" class="btn btn-secondary btn-close"
+                                                            data-dismiss="modal">
+                                                        data-dismiss="modal" >
+                                                        Fechar
+                                                    </button>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <!-- planetas fim -->
+
+
+
+
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const episodeImages = {
+                    1: 'https://raw.githubusercontent.com/Julianavdsantos/imgs/main/ThePhantomMenace.jpg',
+                    2: 'https://raw.githubusercontent.com/Julianavdsantos/imgs/main/AttackoftheClones.jpg',
+                    3: 'https://raw.githubusercontent.com/Julianavdsantos/imgs/main/RevengeoftheSith.png',
+                    4: 'https://raw.githubusercontent.com/Julianavdsantos/imgs/main/AnewHope.jpg',
+                    5: 'https://raw.githubusercontent.com/Julianavdsantos/imgs/main/TheEmpireStrikesBack.jpg',
+                    6: 'https://raw.githubusercontent.com/Julianavdsantos/imgs/main/ReturnoftheJedi.jpg'
+                };
+                const peopleImages = {
+                    1: 'https://raw.githubusercontent.com/Julianavdsantos/imgs/main/LukeSky.jpg',
+                    2: 'https://raw.githubusercontent.com/Julianavdsantos/imgs/main/C-3PO.jpg',
+                    3: 'https://raw.githubusercontent.com/Julianavdsantos/imgs/main/R2-D2_Droid.png',
+                    4: 'https://raw.githubusercontent.com/Julianavdsantos/imgs/main/Darth%20Vader.jpg',
+                    5: 'https://raw.githubusercontent.com/Julianavdsantos/imgs/main/Leia%20Organa.jpg',
+                    6: 'https://raw.githubusercontent.com/Julianavdsantos/imgs/main/Owen%20Lars.jpg',
+                    7: 'https://raw.githubusercontent.com/Julianavdsantos/imgs/main/Beru%20Whitesun%20lars.jpg',
+                    8: 'https://raw.githubusercontent.com/Julianavdsantos/imgs/main/R5-D4.jpg',
+                    9: 'https://raw.githubusercontent.com/Julianavdsantos/imgs/main/Biggs%20Darklighter.jpg',
+                    10: 'https://raw.githubusercontent.com/Julianavdsantos/imgs/main/Obi-Wan%20Kenobi.jpg'
+                };
+                const planetImages = [
+                    'https://raw.githubusercontent.com/Julianavdsantos/imgs/main/planets.jpg'
+                ];
+
+
+
+
+                var filmRows = document.querySelectorAll(".film-row");
+                var peopleRows = document.querySelectorAll(".people-row");
+                var planetRows = document.querySelectorAll(".planet-row");
+
+                function toggleDetails(row, detailsId, imageSrc) {
+                    var detailsDiv = document.getElementById(detailsId);
+                    var imgElement = detailsDiv.querySelector("img");
+
+                    // Ocultar os detalhes iniciais
+                    detailsDiv.style.display = "none";
+
+                    // Adicionar um evento de clique para alternar a exibição dos detalhes
+                    row.addEventListener("click", function () {
+                        if (detailsDiv.style.display === "none") {
+                            detailsDiv.style.display = "block";
+
+                            // Definir o atributo src da imagem com a URL correspondente
+                            imgElement.src = imageSrc;
+                        } else {
+                            detailsDiv.style.display = "none";
+                        }
+                    });
+
+                    // Adicionar um evento de clique para fechar os detalhes
+                    var closeButtons = detailsDiv.querySelectorAll(".btn");
+                    closeButtons.forEach(function (closeButton) {
+                        closeButton.addEventListener("click", function () {
+                            detailsDiv.style.display = "none";
+                        });
+                    });
+                }
+
+                // Aplicar toggleDetails para os filmes
+                filmRows.forEach(function (row) {
+                    var episodeId = row.getAttribute("data-film-id");
+                    toggleDetails(row, "details_" + episodeId, episodeImages[episodeId]);
+                });
+
+                // Aplicar toggleDetails para as pessoas
+                peopleRows.forEach(function (row) {
+                    var peopleId = row.getAttribute("data-people-id");
+                    toggleDetails(row, "details_people_" + peopleId, peopleImages[peopleId]);
+                });
+
+                // Aplicar toggleDetails para os planetas (personalize conforme necessário)
+                planetRows.forEach(function (row) {
+                    var planetId = row.getAttribute("data-planet-id");
+                    toggleDetails(row, "details_planet_" + planetId, planetImages);
+                });
+            });
+        </script>
+
+
+   
+</html>
