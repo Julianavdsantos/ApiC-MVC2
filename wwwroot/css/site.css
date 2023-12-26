@@ -1,4 +1,4 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 * {
     margin: 0;
@@ -77,28 +77,40 @@ button.accept-policy {
 /**/
 
 
-.menu-lateral {
-    float: left; /* Coloca o menu à esquerda */
-    width: 180px; /* Largura do menu lateral */
-    background-color: black;
-    padding: 10px; /* Espaçamento interno do menu */
-    height: 100%; /* Altura 100% da tela */
+/* ... (seus estilos existentes) */
 
-    margin-left: -2%;
+/* Estilos para o menu lateral */
+/* Estilos para o menu lateral */
+.menu-lateral {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    padding: 10px;
+    z-index: 1000;
 }
+
+    .menu-lateral ul {
+        list-style: none;
+        padding: 0;
+        text-align: center; /* Centraliza horizontalmente os itens do menu */
+    }
+
     .menu-lateral a {
         padding: 15px 25px;
         text-decoration: none;
         font-size: 20px;
         color: #fff;
-        display: block;
+        display: inline-block; /* Permite centralizar com margin auto */
         transition: 0.3s;
-        
     }
-    .menu-lateral ul {
-        list-style: none;
-        padding: 0;
-    }
+
+/* ... (seus estilos existentes) */
+
+
+/* ... (seus estilos existentes) */
+
 .table {
     width: 90%;
     background-color: #343a4040;
@@ -123,55 +135,54 @@ table.table tbody tr {
             background-color: #555;
         }
 
-/* Estilos para o conteúdo principal */
+
 .conteudo {
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
-    margin-right: auto;
-    margin-left: 15%;
+    margin: 0 auto; 
     align-items: center;
 }
+
 
 .detalhes {
     display: none;
     width: 20%;
-    /* Defina o valor máximo que deseja para a largura da div pai */
-    margin: 0 auto; /* Centralize a div pai horizontalmente */
+   
+    margin: 0 auto; 
     background-color: #343A40;
-    z-index: 9999; /* Valor alto de z-index para sobrepor outros elementos */
+    z-index: 9999; 
     position: absolute;
-    top: 50%; /* Posicione a div pai no centro verticalmente */
-    left: 50%; /* Posicione a div pai no centro horizontalmente */
-    transform: translate(-50%, -50%); /* Centralize verticalmente e horizontalmente */
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
     color:white;
     border-radius:2%;
 }
 
-    /* Estilo para a imagem dentro da div pai */
+   
 .imgFilme {
-    width: 80%; /* Largura fixa para todas as imagens */
-    height: 100%; /* Altura fixa para todas as imagens */
+    width: 80%; 
+    height: 100%; 
     float: left;
     margin-right: 10px;
 }
 
 .imgPlanet {
-    width: 300px; /* Largura fixa para todas as imagens */
-    height: 500px; /* Altura fixa para todas as imagens */
+    width: 300px; 
+    height: 500px; 
     float: left;
     margin-right: 10px;
 }
 
 
 
-/* Estilo para o conteúdo dentro da div pai */
-.detalhes .container {
-    display: flex; /* Use flexbox para alinhar a imagem e o texto lado a lado */
-    align-items: center; /* Centralize verticalmente */
-}
 
-    /* Estilo para a descrição (texto) ao lado da imagem */
+.detalhes .container {
+    display: flex;
+    align-items: center;
+
+   
     .detalhes p {
         font-size: 15px;
         margin-top: 5%;
@@ -185,13 +196,13 @@ table.table tbody tr {
 .close span {
     font-size: 40px;
 }
-/* Estilos para o botão "Fechar" */
+
 .btn-close {
     float: left; 
     margin-left: 70%;
 }
 
-/* Estilos para a div pai */
+
 .modal-footer {
     text-align: right; 
 }
