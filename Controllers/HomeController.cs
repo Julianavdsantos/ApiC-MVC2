@@ -13,9 +13,8 @@ namespace API.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly SwapiService _swapiService;
-        private readonly SwapiPlanetsService _swapiPlanetsService; // Inclua a instância de SwapiPlanetsService
-        private readonly SwapiPeopleService _swapiPeopleService; // Inclua a instância de SwapiPeopleService
-
+        private readonly SwapiPlanetsService _swapiPlanetsService; 
+        private readonly SwapiPeopleService _swapiPeopleService; 
        
 
         public HomeController(ILogger<HomeController> logger, SwapiService swapiService, SwapiPlanetsService swapiPlanetsService, SwapiPeopleService swapiPeopleService )
