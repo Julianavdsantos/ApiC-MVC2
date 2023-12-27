@@ -21,7 +21,7 @@ namespace API.Models
             if (responsePlanet.IsSuccessStatusCode)
             {
                 var swapiResponsePlanet = await responsePlanet.Content.ReadAsAsync<SwapiPlanetsResponse>();
-                // Adicione o ID à lista de pessoas antes de retorná-la
+                // Adicionei o ID à lista de pessoas antes de retorná-la
                 foreach (var person in swapiResponsePlanet.Results)
                 {
                     person.Id = ExtractIdFromUrl(person.Url);
@@ -34,7 +34,7 @@ namespace API.Models
             }
         }
 
-        // Função para extrair o ID da URL
+        // Aqui  extrair o ID da URL
         private int ExtractIdFromUrl(string url)
         {
             string[] segments = url.TrimEnd('/').Split('/');
