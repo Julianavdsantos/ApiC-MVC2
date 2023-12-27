@@ -22,7 +22,7 @@ namespace API.Models
             {
                 var swapiResponse = await response.Content.ReadAsAsync<SwapiPeopleResponse>();
 
-                // Adicione o ID à lista de pessoas antes de retorná-la
+               
                 foreach (var person in swapiResponse.Results)
                 {
                     person.Id = ExtractIdFromUrl(person.Url);
@@ -36,7 +36,6 @@ namespace API.Models
             }
         }
 
-        // Função para extrair o ID da URL
         private int ExtractIdFromUrl(string url)
         {
             string[] segments = url.TrimEnd('/').Split('/');
