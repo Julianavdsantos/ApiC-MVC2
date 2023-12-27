@@ -19,7 +19,7 @@ namespace API.Models
         public string Diameter { get; set; }
         public List<string> Residents { get; set; }
      
-        [JsonProperty("id")] // Adicione essa anotação se a API retornar um campo "id"
+        [JsonProperty("id")]
         public int Id { get; set; }
         [JsonProperty("url")]
         public string Url { get; set; }
