@@ -27,7 +27,7 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            //nesta parte tenho que registrar cada serviço :
+            //nesta parte tenho que registrar cada serviço, que foi criado na homeController :
             services.AddScoped<SwapiService>(); 
             services.AddScoped<SwapiPlanetsService>(); 
             services.AddScoped<SwapiPeopleService>(); 
