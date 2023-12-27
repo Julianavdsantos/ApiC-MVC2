@@ -31,8 +31,8 @@ namespace API.Controllers
         public async Task<IActionResult> Index()
         {
             var films = await _swapiService.GetFilmsAsync();
-            var people = await _swapiPeopleService.GetPeopleAsync(); // Corrigi o nome do serviço aqui
-            var planets = await _swapiPlanetsService.GetPlanetsAsync(); // Corrigi o nome do serviço aqui
+            var people = await _swapiPeopleService.GetPeopleAsync(); 
+            var planets = await _swapiPlanetsService.GetPlanetsAsync(); 
 
          
 
