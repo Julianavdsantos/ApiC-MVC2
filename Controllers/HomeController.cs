@@ -1,4 +1,4 @@
-﻿using API.Models; // Importe o namespace onde SwapiService está definida
+﻿using API.Models; 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
